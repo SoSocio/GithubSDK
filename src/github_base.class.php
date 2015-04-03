@@ -99,7 +99,7 @@ class Github_base{
 	private function handleError($curlInfo, $result) {
 		if(!in_array($curlInfo['http_code'],$this->httpCodes)){
 			$code = $curlInfo['http_code'];
-			throw new \Exception($result);
+			throw new \Exception(json_encode($result));
 			exit;
 		}
 	}
